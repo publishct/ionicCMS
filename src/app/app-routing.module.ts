@@ -42,6 +42,22 @@ const routes: Routes = [
   {
     path: 'articles',
     loadChildren: () => import('./articles/articles.module').then( m => m.ArticlesPageModule)
+  },
+  {
+    path: 'article/:articleId',
+    loadChildren: () => import('./article/article.module').then( m => m.ArticlePageModule)
+  },
+  {
+    path: 'article-edit/:articleId',
+    loadChildren: () => import('./article-edit/article-edit.module').then( m => m.ArticleEditPageModule)
+  },
+  {
+    path: 'article-create',
+    loadChildren: () => import('./article-create/article-create.module').then( m => m.ArticleCreatePageModule)
+  },
+  {
+    path: 'article-delete/:articleId',
+    loadChildren: () => import('./article-delete/article-delete.module').then( m => m.ArticleDeletePageModule)
   }
 ];
 

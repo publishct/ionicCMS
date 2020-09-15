@@ -11,10 +11,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ArticlesService {
+
   //Set up the URL
 
   private url: string;
-
 
   constructor(private http: HttpClient) {
     let l = window.location;
@@ -31,6 +31,22 @@ export class ArticlesService {
 
   getArticles(): Observable<Article>{
     return this.http.get<Article>(this.url, httpOptions);
+  }
+
+  getArticle(id:String): Observable<Article>{
+    return this.http.get<Article>(`${this.url}/${id}`, httpOptions);
+  }
+
+  createArticle(article: Article): Observable<Article> {
+    return this.http.post<Article>(this.url, article, httpOptions);
+  }
+
+  updateArticle(article: Article): Observable<Article>{
+    return this.http.put<Article>(this.url, article, httpOptions);
+  }
+
+  deleteArticle(id:String): Observable<Article> {
+    return this.http.delete<Article>(`${this.url}/${id}`, httpOptions);
   }
 
 }
