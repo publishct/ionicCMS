@@ -29,7 +29,7 @@ export class ArticlePage implements OnInit {
   getArticle(id:string):void {
     this.articlesService.getArticle(id).subscribe(
       (response:any)=>{
-        console.log(response);
+        //console.log(response);
         this.article = response.article;
       }
     );
