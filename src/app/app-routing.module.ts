@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'user-delete',
     loadChildren: () => import('./user-delete/user-delete.module').then( m => m.UserDeletePageModule)
+  },
+  {
+    path: 'articles',
+    loadChildren: () => import('./articles/articles.module').then( m => m.ArticlesPageModule)
   }
 ];
 
